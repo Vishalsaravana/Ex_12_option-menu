@@ -22,8 +22,104 @@ Step 7: Save and run the application.
 ## PROGRAM:
 /*
 Program to print the text “optionmenu”.
-Developed by:
-Registeration Number :
+Developed by: VISHAL S
+Registeration Number : 212222040181
 */
+
+## MainActivity.java
+
+```
+package com.example.optionmenu;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Set up the toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar); // Set the toolbar as the action bar
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu); // Inflate the menu
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
+    }
+}
+```
+
+## optionsmenu.xml
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/search_item"
+        android:title="Search" />
+    <item android:id="@+id/upload_item"
+        android:title="Upload" />
+    <item android:id="@+id/copy_item"
+        android:title="Copy" />
+    <item android:id="@+id/print_item"
+        android:title="Print" />
+    <item android:id="@+id/share_item"
+        android:title="Share" />
+    <item android:id="@+id/bookmark_item"
+        android:title="BookMark" />
+</menu>
+```
+
+## activity_main.xml
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Options Menu"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?android:attr/colorPrimary" />
+
+    <TextView
+        android:id="@+id/helloTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
 ## OUTPUT
+
+![Screenshot from 2024-11-11 16-05-52](https://github.com/user-attachments/assets/4c583037-7133-4688-bb2c-c8f68a1eb0ce)![Screenshot from 2024-11-11 16-06-14](https://github.com/user-attachments/assets/1ea1ae13-ed66-420b-8e47-907b2c67dc3f)
+
+
+
 ## RESULT
+The application successfully displays an options menu with various items, and upon selecting any item, a toast message shows the selected item.
