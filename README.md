@@ -30,32 +30,26 @@ Registeration Number : 212222040181
 
 ```
 package com.example.optionmenu;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Set up the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar); // Set the toolbar as the action bar
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options_menu, menu); // Inflate the menu
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Toast.makeText(this, "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
@@ -94,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -102,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         android:title="Options Menu"
         app:layout_constraintTop_toTopOf="parent"
         android:background="?android:attr/colorPrimary" />
-
     <TextView
         android:id="@+id/helloTextView"
         android:layout_width="wrap_content"
@@ -112,14 +104,11 @@ public class MainActivity extends AppCompatActivity {
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 ## OUTPUT
 
 ![Screenshot from 2024-11-11 16-05-52](https://github.com/user-attachments/assets/4c583037-7133-4688-bb2c-c8f68a1eb0ce)![Screenshot from 2024-11-11 16-06-14](https://github.com/user-attachments/assets/1ea1ae13-ed66-420b-8e47-907b2c67dc3f)
-
-
 
 ## RESULT
 The application successfully displays an options menu with various items, and upon selecting any item, a toast message shows the selected item.
